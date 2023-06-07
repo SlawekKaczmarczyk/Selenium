@@ -21,11 +21,9 @@ search.send_keys(Keys.RETURN)
 try:
     main = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[4]/main/div/div[3]/div"))).click()
-    main = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/main/div/div[3]/div")
+    main = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/main/div/div[3]/div/ul/li[1]")
     print(main.text)
     
 finally:
     time.sleep(5)
     driver.close()
-
-
