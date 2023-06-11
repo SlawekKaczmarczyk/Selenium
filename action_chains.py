@@ -6,6 +6,8 @@ PATH ="C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 driver.get("https://orteil.dashnet.org/cookieclicker/")
 
+driver.implicitly_wait(5)
+
 cookie = driver.find_element(By.ID, 'bigCookie')
 cookie_count = driver.find_element(By.ID, 'cookies')
 
