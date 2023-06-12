@@ -12,8 +12,11 @@ driver.get("https://orteil.dashnet.org/cookieclicker/")
 consent = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div[2]/div[1]/div[2]/div[2]/button[1]/p"))).click()
 
+language = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, '//*[@id="langSelect-EN"]'))).click()
 
-driver.implicitly_wait(5)
+
+driver.implicitly_wait(50)
 
 cookie = driver.find_element(By.ID, 'bigCookie')
 cookie_count = driver.find_element(By.ID, 'cookies')
