@@ -16,7 +16,7 @@ language = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, '//*[@id="langSelect-EN"]'))).click()
 
 
-driver.implicitly_wait(50)
+driver.implicitly_wait(5)
 
 cookie = driver.find_element(By.ID, 'bigCookie')
 cookie_count = driver.find_element(By.ID, 'cookies')
@@ -27,5 +27,12 @@ actions.click(cookie)
 
 for i in range(5000):
     actions.perform()
-
+    count = int(cookie_count.text.split(" ")[0])
+    for item in items:
+        value = int(item.text)
+        if value <= count:
+            upgrade_actions = ActionChains(driver)
+            upgrade_actions.move_to_element(item)
+            upgrade_actions.click()
+            upgrade_actions.perform()
     
