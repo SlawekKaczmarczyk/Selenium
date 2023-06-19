@@ -10,8 +10,10 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_example(self):
         print("Test")
-        assert True 
+        assert False 
 
+    def test_example_2(self):
+        assert True 
 
     def tearDown(self):
         self.driver.close()
